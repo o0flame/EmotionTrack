@@ -1,5 +1,6 @@
 package com.example.emotiontrack;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -21,6 +22,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
+import java.util.Map;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView mTextMessage;
@@ -28,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     TextView test;
     String username;
     TextInputEditText input;
+
+    Map<String,String> user_info;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
+        user_info = new HashMap<String,String>();
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -65,11 +73,9 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.input_text);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        myRef.child("hello").setValue("heyheyhey");
-
+        final DatabaseReference myRef = database.getReference();
         DatabaseReference userRef = database.getReference("user");
-        userRef.addValueEventListener(new ValueEventListener() {
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -79,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Value is: " , value);
                 System.out.println("value is"+ value);
             }
-
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
@@ -91,13 +96,54 @@ public class MainActivity extends AppCompatActivity {
         log_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //username = input.getText().toString();
-                //if(username.length()>0) test.setText(username);
+                username = input.getText().toString();
+                if(username.length()>0) {
+                    test.setText(username);
+                    DatabaseReference userRef = myRef.child("user").child(username);
 
+                    userRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            //if(dataSnapshot.hasChild(username)){
+                            if(dataSnapshot.exists()){
+                                System.out.println("this user exists");
+                                //read data
+                                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                                    System.out.println("ds:"+ds.getKey()+","+ds.getValue().toString());
+                                    user_info.put(ds.getKey(),ds.getValue().toString());
+                                    System.out.println("userinfo size:"+user_info.size());
+                                }
+
+                                Intent intent = new Intent(MainActivity.this, DashBoard.class);
+                                intent.putExtra("user_info",(Serializable)user_info);
+                                startActivity(intent);
+                            }
+                            else{
+                                //initiate data
+                                System.out.println("push user data");
+                                myRef.child("user").child(username).child("emotion").setValue("1,2,3,4,5,6,7");
+                                myRef.child("user").child(username).child("fullname").setValue(username);
+                                myRef.child("user").child(username).child("analysis").setValue("all good");
+
+                                user_info.put("emotion","1,2,3,4,5,6,7");
+                                user_info.put("fullname",username);
+                                user_info.put("analysis","all good");
+
+                                Intent intent = new Intent(MainActivity.this, DashBoard.class);
+                                intent.putExtra("user_info",(Serializable)user_info);
+                                startActivity(intent);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Log.w("Failed to read value.", databaseError.toException());
+                        }
+                    });
+
+                }
             }
         });
-
-
     }
 
 
