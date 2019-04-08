@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "13475355602",
+    "firebase_url": "https://emotiontrack-bd8aa.firebaseio.com",
+    "project_id": "emotiontrack-bd8aa",
+    "storage_bucket": "emotiontrack-bd8aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13475355602:android:954f05dc8c47c5cb",
+        "android_client_info": {
+          "package_name": "com.example.emotiontrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13475355602-rio02h3mfdktq69u2rkigg3rhqmvls68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emotiontrack",
+            "certificate_hash": "7147f5d98a4d570b1e3e134a822130a754ff17a1"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrHhdmCAxfhWK4CMY8xPhZ-Kwow-zw28w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13475355602-vv3o2rrgu7b0r716q92sagtn5p964e6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
