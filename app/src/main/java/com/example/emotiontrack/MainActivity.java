@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.input_text);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference();
+        final DatabaseReference myRef = database.getReference(); // write
         DatabaseReference userRef = database.getReference("user");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
