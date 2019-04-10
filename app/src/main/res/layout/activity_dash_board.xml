@@ -214,46 +214,51 @@
                         android:gravity="center"/>
 
                     <ImageButton
-                        android:id="@+id/rec_button_7_1"
+                        android:id="@+id/rec_button_0_1"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/rec"/>
+                        android:background="@drawable/rec" />
+
                     <ImageButton
-                        android:id="@+id/rec_button_7_2"
+                        android:id="@+id/rec_button_0_2"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rec"/>
+                        android:background="@drawable/rec" />
+
                     <ImageButton
-                        android:id="@+id/rec_button_7_3"
+                        android:id="@+id/rec_button_0_3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rec"/>
+                        android:background="@drawable/rec" />
+
                     <ImageButton
-                        android:id="@+id/rec_button_7_4"
+                        android:id="@+id/rec_button_0_4"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec" />
+
                     <ImageButton
-                        android:id="@+id/rec_button_7_5"
+                        android:id="@+id/rec_button_0_5"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rec"/>
+                        android:background="@drawable/rec" />
 
                     <ImageView
+                        android:id="@+id/Emotion_0"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/sad"/>
+                        android:layout_marginTop="10dp"
+                        />
 
                 </LinearLayout>
 
@@ -282,7 +287,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec"/>
                     <ImageButton
                         android:id="@+id/rec_button_1_2"
                         android:layout_width="25dp"
@@ -313,11 +318,12 @@
                         android:background="@drawable/rec"/>
 
                     <ImageView
+                        android:id="@+id/Emotion_1"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/laugh"/>
+                        android:layout_marginTop="10dp"
+                         />
 
                 </LinearLayout>
 
@@ -360,7 +366,7 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec"/>
                     <ImageButton
                         android:id="@+id/rec_button_2_4"
                         android:layout_width="25dp"
@@ -377,11 +383,12 @@
                         android:background="@drawable/rec"/>
 
                     <ImageView
+                        android:id="@+id/Emotion_2"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/meh"/>
+                        android:layout_marginTop="10dp"
+                         />
 
                 </LinearLayout>
 
@@ -424,7 +431,7 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec"/>
                     <ImageButton
                         android:id="@+id/rec_button_3_4"
                         android:layout_width="25dp"
@@ -441,11 +448,12 @@
                         android:background="@drawable/rec"/>
 
                     <ImageView
+                        android:id="@+id/Emotion_3"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/meh"/>
+                        android:layout_marginTop="10dp"
+                         />
 
                 </LinearLayout>
 
@@ -488,7 +496,7 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec"/>
                     <ImageButton
                         android:id="@+id/rec_button_4_4"
                         android:layout_width="25dp"
@@ -505,11 +513,12 @@
                         android:background="@drawable/rec"/>
 
                     <ImageView
+                        android:id="@+id/Emotion_4"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/meh"/>
+                        android:layout_marginTop="10dp"
+                         />
 
                 </LinearLayout>
 
@@ -566,14 +575,15 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec"/>
 
                     <ImageView
+                        android:id="@+id/Emotion_5"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/angry"/>
+                        android:layout_marginTop="10dp"
+                         />
 
                 </LinearLayout>
 
@@ -623,7 +633,7 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/dark_rec"/>
+                        android:background="@drawable/rec"/>
                     <ImageButton
                         android:id="@+id/rec_button_6_5"
                         android:layout_width="25dp"
@@ -633,11 +643,12 @@
                         android:background="@drawable/rec"/>
 
                     <ImageView
+                        android:id="@+id/Emotion_6"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:background="@drawable/sad"/>
+                        android:layout_marginTop="10dp"
+                        />
 
                 </LinearLayout>
 

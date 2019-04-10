@@ -1,6 +1,8 @@
 package com.example.emotiontrack;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Date;
@@ -51,8 +54,9 @@ public class DashBoard extends AppCompatActivity {
 
         Date currentTime = Calendar.getInstance().getTime();
         Calendar calendar = Calendar.getInstance();
-        //start from Sunday = 1;
+        //start from Sunday = 1, to sat = 7;
         int day = calendar.get(Calendar.DAY_OF_WEEK);
+        System.out.println("day is"+day);
 
 
         Intent intent = getIntent();
@@ -68,9 +72,35 @@ public class DashBoard extends AppCompatActivity {
         welcomeText = findViewById(R.id.welcome);
         welcomeText.setText("Hi, "+ user_info.get("fullname")+"!");
 
-        String bid = "button_12";
+        //database: last 7 days emotions including today. -->today, yesterday ....
+        //map last seven days to S-M-T...-Sat
+        for(int d=0;d<=6;d++){
+            int cur = day-d-1;
+            if(cur<0) cur+=7; // map 0-6 for sunday to sat
+            String bid = "rec_button_"+String.valueOf(cur)+"_"+String.valueOf(6-emotions[d]);
+            int resID = getResources().getIdentifier(bid,"id",getPackageName());
+            ImageButton colorButton = (ImageButton)findViewById(resID);
+            //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+            colorButton.setBackgroundColor(Color.parseColor("#666bff"));
+
+            String image_id_str = "Emotion_" + String.valueOf(cur);
+            int image_id = getResources().getIdentifier(image_id_str,"id",getPackageName());
+            ImageView imageView = findViewById(image_id);
+            if(emotions[d]==-1) imageView.setImageResource(R.drawable.meh); // replace with ? later on
+            else if(emotions[d]>=4) imageView.setImageResource(R.drawable.laugh);
+            else if(emotions[d]==3) imageView.setImageResource(R.drawable.meh);
+            else if(emotions[d]<=2) imageView.setImageResource(R.drawable.sad);
+
+        }
+
+
+
+        /*
+        String bid = "rec_button_3_2";
         int resID = getResources().getIdentifier(bid,"id",getPackageName());
         ImageButton colorButton = (ImageButton)findViewById(resID);
+        //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+        colorButton.setBackgroundColor(Color.parseColor("#666bff"));*/
 
 
 
