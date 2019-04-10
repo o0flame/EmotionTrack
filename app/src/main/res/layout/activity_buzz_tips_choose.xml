@@ -25,9 +25,8 @@
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="95dp"
-            android:gravity="center_horizontal"
-            android:text="Self Reflect"
+            android:layout_marginLeft="100dp"
+            android:text="Buzz Tips"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -73,7 +72,7 @@
         android:background="@drawable/hor_line"
         android:layout_marginBottom="5dp"
         android:layout_gravity="center_horizontal"/>
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
