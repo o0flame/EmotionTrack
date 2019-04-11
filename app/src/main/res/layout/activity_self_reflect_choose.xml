@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/back_button"
             android:layout_width="50dp"
             android:layout_height="14dp"
             android:background="@drawable/back_button"
@@ -111,12 +112,14 @@
                 android:text="Academic stress"
                 android:textSize="16dp" />
 
-            <ImageButton
-                android:layout_width="20dp"
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_1"
+                android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="190dp"
-                android:background="@drawable/not_choose"/>
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="15dp" />
+
+
         </LinearLayout>
 
         <!--one item 2-->
@@ -139,12 +142,12 @@
                 android:text="Relationship"
                 android:textSize="16dp" />
 
-            <ImageButton
-                android:layout_width="20dp"
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_2"
+                android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="222dp"
-                android:background="@drawable/not_choose"/>
+                android:layout_marginLeft="212dp"
+                android:layout_marginTop="15dp" />
         </LinearLayout>
 
         <!--one item-->
@@ -167,12 +170,12 @@
                 android:text="Time management"
                 android:textSize="16dp" />
 
-            <ImageButton
-                android:layout_width="20dp"
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_3"
+                android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="177dp"
-                android:background="@drawable/not_choose"/>
+                android:layout_marginLeft="168dp"
+                android:layout_marginTop="15dp" />
         </LinearLayout>
 
         <!--one item-->
@@ -195,12 +198,12 @@
                 android:text="Finantial Stress"
                 android:textSize="16dp" />
 
-            <ImageButton
-                android:layout_width="20dp"
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_4"
+                android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="200dp"
-                android:background="@drawable/not_choose"/>
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="15dp" />
         </LinearLayout>
 
         <!--one item-->
@@ -226,29 +229,30 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="264dp"
+                android:layout_marginLeft="261dp"
                 android:background="@drawable/add_icon"/>
         </LinearLayout>
     </LinearLayout>
     <!--list end-->
 
-    <!--empty layout-->
+    <!--empty layout
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
-    </LinearLayout>
-    <!--empty layout end-->
+    </LinearLayout> empty layout end-->
 
     <!--next button-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp">
         <LinearLayout
             android:layout_width="310dp"
             android:layout_height="match_parent">
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/next_button"
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:background="@drawable/next_button_not"/>

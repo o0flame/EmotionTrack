@@ -127,7 +127,7 @@
                     android:background="@drawable/exclamation_mark" />
 
                 <Button
-                    android:id="@+id/more_button"
+                    android:id="@+id/buzztip_button"
                     android:layout_width="180dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="10dp"

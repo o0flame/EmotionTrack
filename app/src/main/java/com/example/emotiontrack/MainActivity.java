@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         log_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
