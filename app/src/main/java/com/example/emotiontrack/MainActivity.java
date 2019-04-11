@@ -119,8 +119,17 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else{
                                 //initiate data
+                                String valueString = "";
                                 System.out.println("push user data");
-                                myRef.child("user").child(username).child("emotion").setValue("1,2,3,4,5,6,7");
+                                for(int i=0; i<=6; i++){
+                                    int cur_rand = (int)(Math.random() * 5);
+                                    if(cur_rand == 0) cur_rand = 1;
+                                    if(cur_rand == 6) cur_rand = 5;
+                                    valueString += String.valueOf(cur_rand);
+                                    if(i<6) valueString += ",";
+                                }
+                                //myRef.child("user").child(username).child("emotion").setValue("1,2,3,4,5,6,7");
+                                myRef.child("user").child(username).child("emotion").setValue(valueString);
                                 myRef.child("user").child(username).child("fullname").setValue(username);
                                 myRef.child("user").child(username).child("analysis").setValue("all good");
 
