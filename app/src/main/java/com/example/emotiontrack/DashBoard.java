@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;
@@ -101,7 +102,7 @@ public class DashBoard extends AppCompatActivity {
             String[] res = user_info.get("emotion").split(",");
             if(res.length!=7) System.out.println("emotion size is wrong");
 
-            int[] emotions = new int[res.length];
+            final int[] emotions = new int[res.length];
             for(int i=0;i<emotions.length;i++) emotions[i] = Integer.parseInt(res[i]);
 
             welcomeText = findViewById(R.id.welcome);
@@ -122,6 +123,14 @@ public class DashBoard extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(DashBoard.this, Analysis.class));
+//                        int message = -1;
+//                        if(emotions[d] == -1) message = 2;
+//                        else if(emotions[d] >= 4) message = 1;
+//                        else if(emotions[d] == 3) message = 2;
+//                        else if(emotions[d] <= 2) message = 3;  // 1: happy, 2: meh, 3: sad
+//                        Intent intent2 = new Intent(DashBoard.this, Analysis.class);
+//                        intent2.putExtra("this_emotion", (Serializable)message);
+//                        startActivity(intent2);
                         //startActivityForResult(new Intent(DashBoard.this, Analysis.class), TO_ANALYSIS);
                     }
                 });
