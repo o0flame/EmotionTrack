@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelfReflectChoose">
+
+    <!--top bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="50dp"
+            android:layout_height="14dp"
+            android:background="@drawable/back_button"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="85dp"
+            android:gravity="center_horizontal"
+            android:text="Change Status"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="380dp"
+        android:layout_height="3dp"
+        android:background="@drawable/hor_line"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_horizontal"/>
+    <!--top bar end-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--oops-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:text="Oops, tell us how you really felt"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <ImageView
+                android:layout_width="340dp"
+                android:layout_height="3dp"
+                android:background="@drawable/hor_line"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <!--date and button-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Tuesday 3/21"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+                <!--emotion choose button-->
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="67dp"
+                    android:layout_marginLeft="80dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/plus"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="emotion"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--write down-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40dp"
+                    android:text="Tell us more about it"/>
+                <EditText
+                    android:id="@+id/input_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:minLines="1"
+                    android:maxLines="10"
+                    android:hint="I feel..."
+                    android:gravity="top"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"/>
+            </LinearLayout>
+
+            <!--buttons-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp">
+                    <Button
+                        android:id="@+id/cancel"
+                        android:layout_width="145dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        android:background="@drawable/name_tag_background" />
+                    <Button
+                        android:id="@+id/confirm"
+                        android:layout_width="145dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="Confirm"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        android:background="@drawable/name_tag_background"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

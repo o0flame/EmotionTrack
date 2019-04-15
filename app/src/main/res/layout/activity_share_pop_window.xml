@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SharePopWindow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:background="@color/common_google_signin_btn_text_dark_disabled">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="100dp"
+            android:text="Share Your Emotion"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="440dp"
+            android:layout_height="3dp"
+            android:background="@drawable/hor_line"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/messenger"/>
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/wechat"/>
+            <ImageButton
+                android:layout_width="70dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/whatsapp"/>
+        </LinearLayout>
+        <!--cancel button-->
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center_horizontal"
+            android:text="cancel"
+            android:textSize="22sp"
+            android:background="@color/common_google_signin_btn_text_dark_default"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

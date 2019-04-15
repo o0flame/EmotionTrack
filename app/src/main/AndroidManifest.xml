@@ -11,8 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SavePopWindow"
-            android:theme="@style/AppTheme.PopWindowTheme"/>  <!-- change the activity style -->
+        <activity android:name=".ChangeStatusPopWindow"></activity>
+        <activity android:name=".ChangeStatus" />
+        <activity android:name=".SharePopWindow" />
+        <activity android:name=".ShareInput" />
+        <activity
+            android:name=".SavePopWindow"
+            android:theme="@style/AppTheme.PopWindowTheme" /> <!-- change the activity style -->
         <activity android:name=".Analysis" />
         <activity android:name=".BuzzTipsOverview" />
         <activity android:name=".SelfReflectSave" />

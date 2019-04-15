@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelfReflectChoose">
+
+    <!--top bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="50dp"
+            android:layout_height="14dp"
+            android:background="@drawable/back_button"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="95dp"
+            android:gravity="center_horizontal"
+            android:text="Self Reflect"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="380dp"
+        android:layout_height="3dp"
+        android:background="@drawable/hor_line"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_horizontal"/>
+    <!--top bar end-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="This Week"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/sad"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="340dp"
+                android:layout_height="3dp"
+                android:background="@drawable/hor_line"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <!--share your emotion-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40dp"
+                    android:text="Share Your Emotion"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="110dp"
+                    android:background="@drawable/pencil2"/>
+            </LinearLayout>
+
+            <!--write down-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40dp"
+                    android:text="Write down how you feel"/>
+                <EditText
+                    android:id="@+id/input_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:minLines="1"
+                    android:maxLines="10"
+                    android:hint="I feel..."
+                    android:gravity="top"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"/>
+            </LinearLayout>
+
+            <!--Choose people-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="To"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp">
+                    <Button
+                        android:layout_width="145dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="Mom"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        android:background="@drawable/name_tag_background" />
+                    <Button
+                        android:layout_width="145dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="Chia"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        android:background="@drawable/name_tag_background"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp">
+                    <Button
+                        android:layout_width="145dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="Kevin"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        android:background="@drawable/name_tag_background" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:gravity="center_horizontal">
+                    <Button
+                        android:layout_width="330dp"
+                        android:layout_height="45dp"
+                        android:text="Share"
+                        android:textAllCaps="false"
+                        android:textSize="18dp"
+                        android:background="@drawable/name_tag_background" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
