@@ -19,48 +19,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/emotion1-1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
-            <Button
-                android:id="@+id/emotion1-2"
+                android:id="@+id/emotion1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="30dp"/>
+                android:alpha=".00"/>
             <Button
-                android:id="@+id/emotion1-3"
+                android:id="@+id/emotion2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="25dp"/>
+                android:layout_marginLeft="30dp"
+                android:alpha=".00"/>
             <Button
-                android:id="@+id/emotion1-4"
+                android:id="@+id/emotion3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="25dp"/>
+                android:layout_marginLeft="25dp"
+                android:alpha=".00"/>
+            <Button
+                android:id="@+id/emotion4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:alpha=".00"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp">
             <Button
-                android:id="@+id/emotion2-1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
-            <Button
-                android:id="@+id/emotion2-2"
+                android:id="@+id/emotion5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="30dp"/>
+                android:alpha=".00"/>
             <Button
-                android:id="@+id/emotion2-3"
+                android:id="@+id/emotion6"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="25dp"/>
+                android:layout_marginLeft="30dp"
+                android:alpha=".00"/>
             <Button
-                android:id="@+id/emotion2-4"
+                android:id="@+id/emotion7"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="25dp"/>
+                android:layout_marginLeft="25dp"
+                android:alpha=".00"/>
+            <Button
+                android:id="@+id/emotion8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:alpha=".00"/>
         </LinearLayout>
 
     </LinearLayout>
