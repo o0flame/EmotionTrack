@@ -1,6 +1,8 @@
 package com.example.emotiontrack;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.annotation.Nullable;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 
 public class ChangeStatus extends AppCompatActivity {
@@ -48,6 +51,15 @@ public class ChangeStatus extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), changeEmojiButton.getResources());
+//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+//                byte[] b = baos.toByteArray();
+//
+//                Intent intent = new Intent(this, ActivityB.class);
+//                intent.putExtra("picture", b);
+
+
                 Intent intent = new Intent();
                 intent.putExtra("this emotion", emojiId);
                 setResult(1, intent);

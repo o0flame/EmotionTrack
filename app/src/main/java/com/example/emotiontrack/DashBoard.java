@@ -2,6 +2,8 @@ package com.example.emotiontrack;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -260,6 +262,14 @@ public class DashBoard extends AppCompatActivity {
 
         if(requestCode == 1){
             if(resultCode == 1){
+//                Bundle extras = getIntent().getExtras();
+//                byte[] b = extras.getByteArray("picture");
+//
+//                Bitmap bmp = BitmapFactory.decodeByteArray(b, 0, b.length);
+//                ImageView image = (ImageView) findViewById(R.id.imageView1);
+//
+//                image.setImageBitmap(bmp);
+
                 int id = data.getIntExtra("this emotion", -1);
                 if(id == 1) showEmotion.setBackgroundResource(R.drawable.e1);
                 else if(id == 2) showEmotion.setBackgroundResource(R.drawable.e2);
