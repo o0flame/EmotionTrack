@@ -201,10 +201,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/text_0"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/20"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/20" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -270,10 +271,11 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
+                        android:id="@+id/text_1"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/21"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/21" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -335,10 +337,11 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
+                        android:id="@+id/text_2"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/22"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/22" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -400,10 +403,11 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
+                        android:id="@+id/text_3"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/23"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/23" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -465,10 +469,11 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
+                        android:id="@+id/text_4"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/24"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/24" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -530,10 +535,11 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
+                        android:id="@+id/text_5"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/25"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/25" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -595,10 +601,11 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
+                        android:id="@+id/text_6"
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="3/26"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="3/26" />
 
                     <TextView
                         android:layout_width="match_parent"

@@ -22,25 +22,25 @@
                 android:id="@+id/emotion1-1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
             <Button
                 android:id="@+id/emotion1-2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
             <Button
                 android:id="@+id/emotion1-3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
             <Button
                 android:id="@+id/emotion1-4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -50,25 +50,25 @@
                 android:id="@+id/emotion2-1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
             <Button
                 android:id="@+id/emotion2-2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
             <Button
                 android:id="@+id/emotion2-3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
             <Button
                 android:id="@+id/emotion2-4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
-                android:background=""/>
+                android:background="@color/common_google_signin_btn_text_dark"/>
         </LinearLayout>
 
     </LinearLayout>

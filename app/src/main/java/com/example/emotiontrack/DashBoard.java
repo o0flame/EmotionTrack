@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.HashMap;
@@ -39,25 +40,11 @@ public class DashBoard extends AppCompatActivity {
 
     Map<String,String> user_info;
 
-//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-//
-//        @Override
-//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//            switch (item.getItemId()) {
-//                case R.id.navigation_home:
-//                    mTextMessage.setText(R.string.title_home);
-//                    return true;
-//                case R.id.navigation_dashboard:
-//                    mTextMessage.setText(R.string.title_dashboard);
-//                    return true;
-//                case R.id.navigation_notifications:
-//                    mTextMessage.setText(R.string.title_notifications);
-//                    return true;
-//            }
-//            return false;
-//        }
-//    };
+    int emotion_day;
+    int curDay;
+    Date currentTime;
+    Calendar calendar;
+    int[] emotions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +76,12 @@ public class DashBoard extends AppCompatActivity {
         });
 
         /* set dashboard by database */
-        Date currentTime = Calendar.getInstance().getTime();
-        Calendar calendar = Calendar.getInstance();
+        currentTime = Calendar.getInstance().getTime();
+        calendar = Calendar.getInstance();
         //start from Sunday = 1, to sat = 7;
         int day = calendar.get(Calendar.DAY_OF_WEEK);
-        System.out.println("day is" + day);
+        curDay = day;
+        //System.out.println("day is" + day);
 
         Intent intent = getIntent();
         if(intent != null){
@@ -102,139 +90,70 @@ public class DashBoard extends AppCompatActivity {
             String[] res = user_info.get("emotion").split(",");
             if(res.length!=7) System.out.println("emotion size is wrong");
 
-            final int[] emotions = new int[res.length];
+            emotions = new int[res.length];
             for(int i=0;i<emotions.length;i++) emotions[i] = Integer.parseInt(res[i]);
 
             welcomeText = findViewById(R.id.welcome);
             welcomeText.setText("Hi, "+ user_info.get("fullname")+"!");
 
-            // Sunday button
-            String bid = "rec_button_"+String.valueOf(0)+"_"+String.valueOf(6-emotions[0]);
-            int resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton sundayButton = (ImageButton)findViewById(resID);
-            sundayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 0);
-            sundayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 0);
-                }
-            });
 
-            // Monday button
-            bid = "rec_button_"+String.valueOf(1)+"_"+String.valueOf(6-emotions[1]);
-            resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton mondayButton = (ImageButton)findViewById(resID);
-            mondayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 1);
-            mondayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 1);
-                }
-            });
+            //database: last 7 days emotions including today. -->today, yesterday ....
+            //map last seven days to S-M-T...-Sat
+            for(int d=0;d<=6;d++){
+                int cur = day-d-1;
+                if(cur<0) cur+=7; // map 0-6 for sunday to sat
+                String dateid = "text_"+String.valueOf(cur);
+                int date_rid = getResources().getIdentifier(dateid,"id",getPackageName());
+                TextView textView = (TextView)findViewById(date_rid);
+                Calendar cal = Calendar.getInstance();
+                cal.add(calendar.DATE,day-d-2);
+                SimpleDateFormat dateFormat =new SimpleDateFormat("MM/dd");
+                String out = dateFormat.format(cal.getTime());
+                textView.setTextSize(10f);
+                textView.setText(out);
 
-            // Tuesday button
-            bid = "rec_button_"+String.valueOf(2)+"_"+String.valueOf(6-emotions[2]);
-            resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton tuesdayButton = (ImageButton)findViewById(resID);
-            tuesdayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 2);
-            tuesdayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 2);
-                }
-            });
 
-            // Wednesday button
-            bid = "rec_button_"+String.valueOf(3)+"_"+String.valueOf(6-emotions[3]);
-            resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton wednesdayButton = (ImageButton)findViewById(resID);
-            wednesdayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 3);
-            wednesdayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 3);
-                }
-            });
 
-            // Thursday button
-            bid = "rec_button_"+String.valueOf(4)+"_"+String.valueOf(6-emotions[4]);
-            resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton thursdayButton = (ImageButton)findViewById(resID);
-            thursdayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 4);
-            thursdayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 4);
-                }
-            });
+                String bid = "rec_button_"+String.valueOf(cur)+"_"+String.valueOf(6-emotions[d]);
+                int resID = getResources().getIdentifier(bid,"id",getPackageName());
+                ImageButton colorButton = (ImageButton)findViewById(resID);
+                //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+                colorButton.setBackgroundResource(R.drawable.dark_rec);
+                emotion_day = d;
+                customSetOnClick(colorButton,curDay,d);  //customized on click to pass vars
 
-            // Friday button
-            bid = "rec_button_"+String.valueOf(5)+"_"+String.valueOf(6-emotions[5]);
-            resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton fridayButton = (ImageButton)findViewById(resID);
-            fridayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 5);
-            fridayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 5);
-                }
-            });
+                /*colorButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //startActivity(new Intent(DashBoard.this, Analysis.class));
+                        int message = -1;
+                        if(emotions[emotion_day] == -1) message = 2;
+                        else if(emotions[emotion_day] >= 4) message = 1;
+                        else if(emotions[emotion_day] == 3) message = 2;
+                        else if(emotions[emotion_day] <= 2) message = 3;  // 1: happy, 2: meh, 3: sad
+                        System.out.println(message);
+                        SimpleDateFormat format =new SimpleDateFormat("EEEE MM-dd-YYYY");
+                        Calendar cal = Calendar.getInstance();
+                        cal.add(Calendar.DATE,curDay-emotion_day);
+                        //intent2.putExtra("date", format.format(cal.getTime()));
+                        System.out.println("format.format(cal.getTime()):"+format.format(cal.getTime()));
+                        //Intent intent2 = new Intent(DashBoard.this, Analysis.class);
+                        //intent2.putExtra("this_emotion", message);
 
-            // Saturday button
-            bid = "rec_button_"+String.valueOf(6)+"_"+String.valueOf(6-emotions[6]);
-            resID = getResources().getIdentifier(bid,"id",getPackageName());
-            ImageButton saturdayButton = (ImageButton)findViewById(resID);
-            saturdayButton.setBackgroundResource(R.drawable.dark_rec);
-            setEmojiHere(emotions, 6);
-            saturdayButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    setIntentHere(emotions, 6);
-                }
-            });
+                        //startActivity(intent2);
+                        //startActivityForResult(new Intent(DashBoard.this, Analysis.class), TO_ANALYSIS);
+                    }
+                });*/
 
-//            //database: last 7 days emotions including today. -->today, yesterday ....
-//            //map last seven days to S-M-T...-Sat
-//            for(int d=0;d<=6;d++){
-//                int cur = day-d-1;
-//                if(cur<0) cur+=7; // map 0-6 for sunday to sat
-//                String bid = "rec_button_"+String.valueOf(cur)+"_"+String.valueOf(6-emotions[d]);
-//                int resID = getResources().getIdentifier(bid,"id",getPackageName());
-//                ImageButton colorButton = (ImageButton)findViewById(resID);
-//                //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
-//                colorButton.setBackgroundResource(R.drawable.dark_rec);
-//
-//                colorButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        startActivity(new Intent(DashBoard.this, Analysis.class));
-//                        int message = -1;
-//                        if(emotions[d] == -1) message = 2;
-//                        else if(emotions[d] >= 4) message = 1;
-//                        else if(emotions[d] == 3) message = 2;
-//                        else if(emotions[d] <= 2) message = 3;  // 1: happy, 2: meh, 3: sad
-//                        Intent intent2 = new Intent(DashBoard.this, Analysis.class);
-//                        intent2.putExtra("this_emotion", (Serializable)message);
-//                        startActivity(intent2);
-//                        //startActivityForResult(new Intent(DashBoard.this, Analysis.class), TO_ANALYSIS);
-//                    }
-//                });
-//
-//                String image_id_str = "Emotion_" + String.valueOf(cur);
-//                int image_id = getResources().getIdentifier(image_id_str,"id",getPackageName());
-//                ImageView imageView = findViewById(image_id);
-//                if(emotions[d]==-1) imageView.setImageResource(R.drawable.meh); // replace with ? later on
-//                else if(emotions[d]>=4) imageView.setImageResource(R.drawable.laugh);
-//                else if(emotions[d]==3) imageView.setImageResource(R.drawable.meh);
-//                else if(emotions[d]<=2) imageView.setImageResource(R.drawable.sad);
-//
-//            }
+                String image_id_str = "Emotion_" + String.valueOf(cur);
+                int image_id = getResources().getIdentifier(image_id_str,"id",getPackageName());
+                ImageView imageView = findViewById(image_id);
+                if(emotions[d]==-1) imageView.setImageResource(R.drawable.meh); // replace with ? later on
+                else if(emotions[d]>=4) imageView.setImageResource(R.drawable.laugh);
+                else if(emotions[d]==3) imageView.setImageResource(R.drawable.meh);
+                else if(emotions[d]<=2) imageView.setImageResource(R.drawable.sad);
+
+            }
         }// if syntax end
 
 
@@ -269,6 +188,34 @@ public class DashBoard extends AppCompatActivity {
         else if(emotions[e]>=4) imageView.setImageResource(R.drawable.laugh);
         else if(emotions[e]==3) imageView.setImageResource(R.drawable.meh);
         else if(emotions[e]<=2) imageView.setImageResource(R.drawable.sad);
+    }
+
+
+    private void customSetOnClick(final ImageButton btn, final int curDay,final int d){
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Do whatever you want(str can be used here)
+                int message = -1;
+                if(emotions[d] == -1) message = 2;
+                else if(emotions[d] >= 4) message = 1;
+                else if(emotions[d] == 3) message = 2;
+                else if(emotions[d] <= 2) message = 3;
+                SimpleDateFormat format =new SimpleDateFormat("EEEE MM/dd");
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.DATE,curDay-d-2);
+                //intent2.putExtra("date", format.format(cal.getTime()));
+                System.out.println("format.format(cal.getTime()):"+format.format(cal.getTime()));
+
+                Intent intent2 = new Intent(DashBoard.this, Analysis.class);
+                intent2.putExtra("this_emotion", message);
+                intent2.putExtra("date", format.format(cal.getTime()));
+
+                startActivity(intent2);
+
+            }
+        });
     }
 
 //    @Override

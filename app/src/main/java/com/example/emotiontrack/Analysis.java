@@ -27,9 +27,13 @@ public class Analysis extends AppCompatActivity {
 
         /* intent setting */
         Intent intent = getIntent();
-        int[] info = (int[]) intent.getSerializableExtra("this_emotion");
-        int this_emotion = info[0];
-        int day = info[1];
+        String currentDATE = intent.getStringExtra("date");
+        System.out.println("date"+ currentDATE);
+
+
+        //int[] info = (int[]) intent.getSerializableExtra("this_emotion");
+        int this_emotion = intent.getIntExtra("this_emotion",2);
+
 
         /* emoji */
         emoji = findViewById(R.id.this_emoji);
@@ -39,13 +43,7 @@ public class Analysis extends AppCompatActivity {
 
         /*  date */
         date = findViewById(R.id.this_date);
-        if(day == 0) date.setText("Sunday 3/20");
-        else if(day == 1) date.setText("Monday 3/21");
-        else if(day == 2) date.setText("Tuesday 3/22");
-        else if(day == 3) date.setText("Wednesday 3/23");
-        else if(day == 4) date.setText("Thursday 3/24");
-        else if(day == 5) date.setText("Friday 3/25");
-        else if(day == 6) date.setText("Saturday 3/26");
+        date.setText(currentDATE);
 
         /* tags */
         tag1 = findViewById(R.id.tag_1);
