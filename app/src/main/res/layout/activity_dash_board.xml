@@ -149,7 +149,7 @@
             android:paddingTop="15dp">
 
             <ImageView
-                android:id="@+id/image_upset"
+                android:id="@+id/show_emotion"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 app:srcCompat="@drawable/unhappy" />

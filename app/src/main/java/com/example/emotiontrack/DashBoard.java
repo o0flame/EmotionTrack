@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -39,6 +41,7 @@ public class DashBoard extends AppCompatActivity {
     Button buzzTipsButtion;
     Button shareButton;
     Button changeStatusButton;
+    ImageView showEmotion;
 
 
     Map<String,String> user_info;
@@ -87,11 +90,14 @@ public class DashBoard extends AppCompatActivity {
             }
         });
 
+        /*change status button*/
+        showEmotion = (ImageView) findViewById(R.id.show_emotion);
         changeStatusButton = (Button) findViewById(R.id.change_status_button);
         changeStatusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashBoard.this, ChangeStatus.class));
+                Intent intent = new Intent(DashBoard.this, ChangeStatus.class);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -248,7 +254,37 @@ public class DashBoard extends AppCompatActivity {
         });
     }
 
-//    @Override
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1){
+            if(resultCode == 1){
+                int id = data.getIntExtra("this emotion", -1);
+                if(id == 1) showEmotion.setBackgroundResource(R.drawable.e1);
+                else if(id == 2) showEmotion.setBackgroundResource(R.drawable.e2);
+                else if(id == 3) showEmotion.setBackgroundResource(R.drawable.e3);
+                else if(id == 4) showEmotion.setBackgroundResource(R.drawable.e4);
+                else if(id == 5) showEmotion.setBackgroundResource(R.drawable.e5);
+                else if(id == 6) showEmotion.setBackgroundResource(R.drawable.e6);
+                else if(id == 7) showEmotion.setBackgroundResource(R.drawable.e7);
+                else if(id == 8) showEmotion.setBackgroundResource(R.drawable.e8);
+                else {}
+            }
+        }
+    }
+
+    public static int getResId(String resName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    //    @Override
 //    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 //        super.onActivityResult(requestCode, resultCode, data);
 //
