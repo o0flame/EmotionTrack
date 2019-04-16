@@ -45,6 +45,7 @@ public class DashBoard extends AppCompatActivity {
     Date currentTime;
     Calendar calendar;
     int[] emotions;
+    String[] analysis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +96,8 @@ public class DashBoard extends AppCompatActivity {
 
             welcomeText = findViewById(R.id.welcome);
             welcomeText.setText("Hi, "+ user_info.get("fullname")+"!");
+
+            analysis = user_info.get("analysis").split(",");
 
 
             //database: last 7 days emotions including today. -->today, yesterday ....
@@ -163,6 +166,17 @@ public class DashBoard extends AppCompatActivity {
         ImageButton colorButton = (ImageButton)findViewById(resID);
         //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
         colorButton.setBackgroundColor(Color.parseColor("#666bff"));*/
+        if(analysis.length>=3){
+            TextView kw1 = findViewById(R.id.tag1);
+            kw1.setText(analysis[0]);
+            TextView kw2 = findViewById(R.id.tag2);
+            kw2.setText(analysis[1]);
+            TextView kw3 = findViewById(R.id.tag3);
+            kw3.setText(analysis[2]);
+        }
+
+
+
 
     }// onCreate end
 

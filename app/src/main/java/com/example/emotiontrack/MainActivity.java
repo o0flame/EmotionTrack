@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                                 System.out.println("this user exists");
                                 //read data
                                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                                    System.out.println("ds:"+ds.getKey()+","+ds.getValue().toString());
+                                    //System.out.println("ds:"+ds.getKey()+","+ds.getValue().toString());
                                     user_info.put(ds.getKey(),ds.getValue().toString());
                                     System.out.println("userinfo size:"+user_info.size());
                                 }
@@ -131,11 +131,11 @@ public class MainActivity extends AppCompatActivity {
                                 //myRef.child("user").child(username).child("emotion").setValue("1,2,3,4,5,6,7");
                                 myRef.child("user").child(username).child("emotion").setValue(valueString);
                                 myRef.child("user").child(username).child("fullname").setValue(username);
-                                myRef.child("user").child(username).child("analysis").setValue("all good");
+                                myRef.child("user").child(username).child("analysis").setValue("happy,wonderful,glad");
 
                                 user_info.put("emotion","1,2,3,4,5,6,7");
                                 user_info.put("fullname",username);
-                                user_info.put("analysis","all good");
+                                user_info.put("analysis","happy,wonderful,glad");
 
                                 Intent intent = new Intent(MainActivity.this, DashBoard.class);
                                 intent.putExtra("user_info",(Serializable)user_info);
