@@ -93,6 +93,7 @@
                     android:orientation="vertical"
                     android:layout_gravity="center_vertical">
                     <ImageButton
+                        android:id="@+id/change_emoji_button"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/plus"/>
@@ -138,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp">
                     <Button
-                        android:id="@+id/cancel"
+                        android:id="@+id/cancel_button"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="40dp"
@@ -147,7 +148,7 @@
                         android:textSize="18dp"
                         android:background="@drawable/name_tag_background" />
                     <Button
-                        android:id="@+id/confirm"
+                        android:id="@+id/confirm_button"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="40dp"

@@ -179,6 +179,7 @@
                     android:paddingTop="30dp"
                     android:gravity="center_horizontal">
                     <Button
+                        android:id="@+id/share_button"
                         android:layout_width="330dp"
                         android:layout_height="45dp"
                         android:text="Share"

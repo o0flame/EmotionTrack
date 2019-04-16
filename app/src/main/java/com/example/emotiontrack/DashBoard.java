@@ -37,6 +37,9 @@ public class DashBoard extends AppCompatActivity {
     TextView welcomeText;
     Button selfReflectButton;
     Button buzzTipsButtion;
+    Button shareButton;
+    Button changeStatusButton;
+
 
     Map<String,String> user_info;
 
@@ -67,12 +70,28 @@ public class DashBoard extends AppCompatActivity {
             }
         });
 
+        shareButton = (Button)findViewById(R.id.share_button);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashBoard.this, ShareInput.class));
+            }
+        });
+
         buzzTipsButtion = (Button) findViewById(R.id.buzztip_button);
         buzzTipsButtion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DashBoard.this, BuzzTipsChoose.class));
                 //startActivityForResult(new Intent(DashBoard.this, BuzzTipsChoose.class), TO_BUZZ_TIPS_CHOOSE);
+            }
+        });
+
+        changeStatusButton = (Button) findViewById(R.id.change_status_button);
+        changeStatusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashBoard.this, ChangeStatus.class));
             }
         });
 
@@ -159,13 +178,13 @@ public class DashBoard extends AppCompatActivity {
             }
         }// if syntax end
 
-
         /*
         String bid = "rec_button_3_2";
         int resID = getResources().getIdentifier(bid,"id",getPackageName());
         ImageButton colorButton = (ImageButton)findViewById(resID);
         //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
         colorButton.setBackgroundColor(Color.parseColor("#666bff"));*/
+
         if(analysis.length>=3){
             TextView kw1 = findViewById(R.id.tag1);
             kw1.setText(analysis[0]);
@@ -174,9 +193,6 @@ public class DashBoard extends AppCompatActivity {
             TextView kw3 = findViewById(R.id.tag3);
             kw3.setText(analysis[2]);
         }
-
-
-
 
     }// onCreate end
 

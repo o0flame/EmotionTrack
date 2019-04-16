@@ -10,8 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:orientation="vertical"
-        android:background="@color/common_google_signin_btn_text_dark_disabled">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,17 +33,20 @@
             android:layout_height="wrap_content"
             android:paddingTop="20dp">
             <ImageButton
+                android:id="@+id/messenger_button"
                 android:layout_width="70dp"
                 android:layout_height="75dp"
                 android:layout_marginLeft="40dp"
                 android:background="@drawable/messenger"/>
             <ImageButton
+                android:id="@+id/wechat_button"
                 android:layout_width="70dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/wechat"/>
             <ImageButton
+                android:id="@+id/whatsapp_button"
                 android:layout_width="70dp"
                 android:layout_height="75dp"
                 android:layout_marginLeft="20dp"
@@ -52,13 +54,14 @@
         </LinearLayout>
         <!--cancel button-->
         <Button
+            android:id="@+id/cancel_button"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="80dp"
             android:layout_gravity="center_horizontal"
             android:text="cancel"
             android:textSize="22sp"
-            android:background="@color/common_google_signin_btn_text_dark_default"/>
+            android:background="@drawable/name_tag_background"/>
 
 
     </LinearLayout>

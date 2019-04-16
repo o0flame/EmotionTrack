@@ -155,7 +155,7 @@
                 app:srcCompat="@drawable/unhappy" />
 
             <Button
-                android:id="@+id/how_felt_button"
+                android:id="@+id/change_status_button"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginTop="10dp"
