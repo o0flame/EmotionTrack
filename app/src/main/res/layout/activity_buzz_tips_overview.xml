@@ -9,6 +9,7 @@
     tools:context=".SelfReflectChoose">
 
     <!--top bar-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +46,7 @@
     <!--Rencent Trend-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="100dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,14 +56,14 @@
             android:text="Recent Trend"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/unhappy"/>
+            android:background="@drawable/unhappy" />
 
     </LinearLayout>
     <!--Rencent Trend end-->
@@ -77,74 +78,127 @@
     <!-- divider end -->
 
     <!-- Tips -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="8dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="10dp"
-        android:text="General tips:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="10dp"
-        android:text="Have a good meal\nWork out "
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="Relationship"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:text="Love yourself\nBe honest"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="Financial pressure:"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:text="Have a save plan\nInvest"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="Time Management"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:text="Know your goal\nPlan ahead "
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:text="Academic pressure:"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="8dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="10dp"
-        android:text="Form a study group\nKeep up with your sleep\nTalk to professors "
+        android:text="Form a study group\nTalk to professors "
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:text="If you need professional talk:"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="8dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="10dp"
         android:text="Check out counseling center!"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <!-- Tips end -->
 

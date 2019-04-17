@@ -143,35 +143,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp">
+
                     <Button
+                        android:id="@+id/contact1"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="40dp"
+                        android:background="@drawable/name_tag_background"
                         android:text="Mom"
                         android:textAllCaps="false"
-                        android:textSize="18dp"
-                        android:background="@drawable/name_tag_background" />
+                        android:textSize="18dp" />
+
                     <Button
+                        android:id="@+id/contact2"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="40dp"
-                        android:text="Chia"
+                        android:background="@drawable/name_tag_background"
+                        android:text="Alex"
                         android:textAllCaps="false"
-                        android:textSize="18dp"
-                        android:background="@drawable/name_tag_background"/>
+                        android:textSize="18dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp">
+
                     <Button
+                        android:id="@+id/contact3"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
                         android:layout_marginLeft="40dp"
+                        android:background="@drawable/name_tag_background"
                         android:text="Kevin"
                         android:textAllCaps="false"
-                        android:textSize="18dp"
-                        android:background="@drawable/name_tag_background" />
+                        android:textSize="18dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"

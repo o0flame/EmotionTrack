@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 username = input.getText().toString();
                 if(username.length()>0) {
-                    test.setText(username);
+                    //test.setText(username);
                     DatabaseReference userRef = myRef.child("user").child(username);
 
                     userRef.addValueEventListener(new ValueEventListener() {
