@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="40dp"
                 android:text="Oops, tell us how you really felt"
@@ -76,20 +76,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:gravity="center_vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40dp"
                     android:text="Tuesday 3/21"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
                 <!--emotion choose button-->
                 <LinearLayout
                     android:layout_width="50dp"
                     android:layout_height="67dp"
-                    android:layout_marginLeft="80dp"
+                    android:layout_marginLeft="60dp"
                     android:orientation="vertical"
                     android:layout_gravity="center_vertical">
                     <ImageButton
@@ -109,24 +110,26 @@
             <!--write down-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
+                android:layout_height="292dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="40dp"
-                    android:text="Tell us more about it"/>
+                    android:text="Tell us more about it" />
+
                 <EditText
                     android:id="@+id/input_text"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:minLines="1"
-                    android:maxLines="10"
-                    android:hint="I feel..."
-                    android:gravity="top"
+                    android:layout_height="250dp"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"/>
+                    android:layout_marginRight="40dp"
+                    android:gravity="top"
+                    android:hint="I feel..."
+                    android:maxLines="10"
+                    android:minLines="1" />
             </LinearLayout>
 
             <!--buttons-->
@@ -137,21 +140,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp">
+                            >
                     <Button
                         android:id="@+id/cancel_button"
-                        android:layout_width="145dp"
+                        android:layout_width="100dp"
                         android:layout_height="45dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="60dp"
                         android:text="Cancel"
                         android:textAllCaps="false"
                         android:textSize="18dp"
                         android:background="@drawable/name_tag_background" />
                     <Button
                         android:id="@+id/confirm_button"
-                        android:layout_width="145dp"
+                        android:layout_width="100dp"
                         android:layout_height="45dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="60dp"
                         android:text="Confirm"
                         android:textAllCaps="false"
                         android:textSize="18dp"

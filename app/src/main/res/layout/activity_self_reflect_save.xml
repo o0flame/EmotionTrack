@@ -123,19 +123,19 @@
 
     <!--save button-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="310dp"
-            android:layout_height="match_parent">
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/save_button"
-            android:layout_width="70dp"
-            android:layout_height="30dp"
-            android:background="@drawable/save_button"/>
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="230dp"
+        android:layout_height="match_parent">
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/save_button"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:background="@drawable/save_button"/>
+</LinearLayout>
     <!--save button end-->
 
 </LinearLayout>

@@ -41,9 +41,14 @@ public class Analysis extends AppCompatActivity {
         else if(this_emotion == 2) emoji.setBackgroundResource((R.drawable.meh));
         else if(this_emotion == 3) emoji.setBackgroundResource(R.drawable.sad);
 
+            // parse
+        String[] dates = currentDATE.split(" ");
+
         /*  date */
         date = findViewById(R.id.this_date);
-        date.setText(currentDATE);
+        date.setText(dates[0]);
+        date = findViewById(R.id.this_day);
+        date.setText(dates[1]);
 
         /* tags */
         tag1 = findViewById(R.id.tag_1);
