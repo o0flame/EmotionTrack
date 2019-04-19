@@ -44,19 +44,19 @@ public class ShareInput extends AppCompatActivity {
         contact1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShareInput.this, SavePopWindow.class));
+                startActivity(new Intent(ShareInput.this, SharePopWindow.class));
             }
         });
         contact2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShareInput.this, SavePopWindow.class));
+                startActivity(new Intent(ShareInput.this, SharePopWindow.class));
             }
         });
         contact3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShareInput.this, SavePopWindow.class));
+                startActivity(new Intent(ShareInput.this, SharePopWindow.class));
             }
         });
 

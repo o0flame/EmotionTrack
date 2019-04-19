@@ -8,6 +8,17 @@
     android:orientation="vertical"
     tools:context=".SelfReflectChoose">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+
     <!--top bar-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -260,5 +271,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
     <!--next button end-->
-
+     </LinearLayout>
+    </ScrollView>
 </LinearLayout>

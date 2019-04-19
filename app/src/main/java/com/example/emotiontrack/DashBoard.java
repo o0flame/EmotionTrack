@@ -124,7 +124,7 @@ public class DashBoard extends AppCompatActivity {
             for(int i=0;i<emotions.length;i++) emotions[i] = Integer.parseInt(res[i]);
 
             welcomeText = findViewById(R.id.welcome);
-            welcomeText.setText("Hi, "+ user_info.get("fullname")+"!" + " Today is " + calendar.get(Calendar.DATE));
+            welcomeText.setText("Hi, "+ user_info.get("fullname")+"!" + " Today is " + calendar.get(Calendar.MONTH) + "/"+ calendar.get(Calendar.DATE));
 
             analysis = user_info.get("analysis").split(",");
 
