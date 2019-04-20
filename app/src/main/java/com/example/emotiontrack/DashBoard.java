@@ -123,8 +123,13 @@ public class DashBoard extends AppCompatActivity {
             emotions = new int[res.length];
             for(int i=0;i<emotions.length;i++) emotions[i] = Integer.parseInt(res[i]);
 
+            if(emotions[0]<=2) showEmotion.setImageResource(R.drawable.sad);
+            else if(emotions[0]==3) showEmotion.setImageResource(R.drawable.meh);
+            else if(emotions[0]>=4) showEmotion.setImageResource(R.drawable.laugh);
+
+
             welcomeText = findViewById(R.id.welcome);
-            welcomeText.setText("Hi, "+ user_info.get("fullname")+"!" + " Today is " + calendar.get(Calendar.MONTH) + "/"+ calendar.get(Calendar.DATE));
+            welcomeText.setText("Hi, "+ user_info.get("fullname")+"!" + " Today is " + (calendar.get(Calendar.MONTH)+1) + "/"+ calendar.get(Calendar.DATE));
 
             analysis = user_info.get("analysis").split(",");
 
@@ -134,27 +139,30 @@ public class DashBoard extends AppCompatActivity {
             for(int d=0;d<=6;d++){
                 int cur = day-d-1;
                 if(cur<0) cur+=7; // map 0-6 for sunday to sat
-                String dateid = "text_"+String.valueOf(cur);
+
+                String dateid = "text_"+String.valueOf(d);
                 int date_rid = getResources().getIdentifier(dateid,"id",getPackageName());
                 TextView textView = (TextView)findViewById(date_rid);
                 Calendar cal = Calendar.getInstance();
-                cal.add(calendar.DATE,day-d-2);
+                int add = d+1-day;
+                if(add>0) add -=7;
+                cal.add(calendar.DATE,add);
                 SimpleDateFormat dateFormat =new SimpleDateFormat("MM/dd");
                 String out = dateFormat.format(cal.getTime());
                 textView.setTextSize(10f);
                 textView.setText(out);
 
 
+                if(emotions[d]!=-1){
+                    String bid = "rec_button_"+String.valueOf(cur)+"_"+String.valueOf(6-emotions[d]);
+                    int resID = getResources().getIdentifier(bid,"id",getPackageName());
+                    ImageButton colorButton = (ImageButton)findViewById(resID);
+                    //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+                    colorButton.setBackgroundResource(R.drawable.dark_rec);
+                    emotion_day = d;
+                    customSetOnClick(colorButton,curDay,d);  //customized on click to pass vars
 
-                String bid = "rec_button_"+String.valueOf(cur)+"_"+String.valueOf(6-emotions[d]);
-                int resID = getResources().getIdentifier(bid,"id",getPackageName());
-                ImageButton colorButton = (ImageButton)findViewById(resID);
-                //colorButton.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
-                colorButton.setBackgroundResource(R.drawable.dark_rec);
-                emotion_day = d;
-                customSetOnClick(colorButton,curDay,d);  //customized on click to pass vars
-
-                /*colorButton.setOnClickListener(new View.OnClickListener() {
+                    /*colorButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //startActivity(new Intent(DashBoard.this, Analysis.class));
@@ -177,14 +185,18 @@ public class DashBoard extends AppCompatActivity {
                     }
                 });*/
 
-                String image_id_str = "Emotion_" + String.valueOf(cur);
-                int image_id = getResources().getIdentifier(image_id_str,"id",getPackageName());
-                ImageView imageView = findViewById(image_id);
-                if(emotions[d]==-1)imageView.setImageResource(R.drawable.meh);
-                    // replace with ? later on
-                else if(emotions[d]>=4) imageView.setImageResource(R.drawable.laugh);
-                else if(emotions[d]==3) imageView.setImageResource(R.drawable.meh);
-                else if(emotions[d]<=2) imageView.setImageResource(R.drawable.sad);
+                    String image_id_str = "Emotion_" + String.valueOf(cur);
+                    int image_id = getResources().getIdentifier(image_id_str,"id",getPackageName());
+                    ImageView imageView = findViewById(image_id);
+                    if(emotions[d]==-1)imageView.setImageResource(R.drawable.meh);
+                        // replace with ? later on
+                    else if(emotions[d]>=4) imageView.setImageResource(R.drawable.laugh);
+                    else if(emotions[d]==3) imageView.setImageResource(R.drawable.meh);
+                    else if(emotions[d]<=2) imageView.setImageResource(R.drawable.sad);
+                }
+
+
+
 
             }
         }// if syntax end
