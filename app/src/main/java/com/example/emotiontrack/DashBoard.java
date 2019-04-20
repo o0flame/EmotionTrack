@@ -178,7 +178,8 @@ public class DashBoard extends AppCompatActivity {
                 String image_id_str = "Emotion_" + String.valueOf(cur);
                 int image_id = getResources().getIdentifier(image_id_str,"id",getPackageName());
                 ImageView imageView = findViewById(image_id);
-                if(emotions[d]==-1) imageView.setImageResource(R.drawable.meh); // replace with ? later on
+                if(emotions[d]==-1)imageView.setImageResource(R.drawable.meh);
+                    // replace with ? later on
                 else if(emotions[d]>=4) imageView.setImageResource(R.drawable.laugh);
                 else if(emotions[d]==3) imageView.setImageResource(R.drawable.meh);
                 else if(emotions[d]<=2) imageView.setImageResource(R.drawable.sad);
