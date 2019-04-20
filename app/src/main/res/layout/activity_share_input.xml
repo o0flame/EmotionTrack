@@ -26,7 +26,7 @@
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="95dp"
+            android:layout_marginLeft="85dp"
             android:gravity="center_horizontal"
             android:text="Self Reflect"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -59,12 +59,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
                     android:layout_marginLeft="100dp"
+                    android:layout_marginTop="25dp"
                     android:text="This Week"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -90,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
                     android:text="Share Your Emotion"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="22sp"
@@ -99,7 +99,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="110dp"
+                    android:layout_marginLeft="70dp"
                     android:background="@drawable/pencil2"/>
             </LinearLayout>
 
@@ -112,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
                     android:text="Write down how you feel"/>
                 <EditText
                     android:id="@+id/input_text"
@@ -120,9 +120,9 @@
                     android:layout_height="250dp"
                     android:minLines="1"
                     android:maxLines="10"
-                    android:hint="I feel..."
+                    android:hint="I feel sad this week"
                     android:gravity="top"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
                     android:layout_marginRight="40dp"/>
             </LinearLayout>
 
@@ -134,7 +134,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
                     android:text="To"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="22sp"
@@ -148,7 +148,7 @@
                         android:id="@+id/contact1"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="30dp"
                         android:background="@drawable/name_tag_background"
                         android:text="Mom"
                         android:textAllCaps="false"
@@ -158,7 +158,7 @@
                         android:id="@+id/contact2"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginStart="10dp"
                         android:background="@drawable/name_tag_background"
                         android:text="Alex"
                         android:textAllCaps="false"
@@ -173,7 +173,7 @@
                         android:id="@+id/contact3"
                         android:layout_width="145dp"
                         android:layout_height="45dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="30dp"
                         android:background="@drawable/name_tag_background"
                         android:text="Kevin"
                         android:textAllCaps="false"

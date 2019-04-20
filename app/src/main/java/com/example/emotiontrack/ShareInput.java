@@ -41,22 +41,26 @@ public class ShareInput extends AppCompatActivity {
         Button contact2 = findViewById(R.id.contact2);
         Button contact3 = findViewById(R.id.contact3);
 
+//        ShareInput.this
         contact1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShareInput.this, SavePopWindow.class));
+                SharePopWindow popWindow = new SharePopWindow();
+                popWindow.show(getSupportFragmentManager(), "popWindow");
             }
         });
         contact2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShareInput.this, SavePopWindow.class));
+                SharePopWindow popWindow = new SharePopWindow();
+                popWindow.show(getSupportFragmentManager(), "popWindow");
             }
         });
         contact3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ShareInput.this, SavePopWindow.class));
+                SharePopWindow popWindow = new SharePopWindow();
+                popWindow.show(getSupportFragmentManager(), "popWindow");
             }
         });
 

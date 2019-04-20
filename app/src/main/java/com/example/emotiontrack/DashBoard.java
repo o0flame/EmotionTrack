@@ -39,6 +39,7 @@ public class DashBoard extends AppCompatActivity {
     /* widgets */
     private TextView mTextMessage;
     TextView welcomeText;
+    TextView welcomeDateText;
     Button selfReflectButton;
     Button buzzTipsButtion;
     Button shareButton;
@@ -111,6 +112,7 @@ public class DashBoard extends AppCompatActivity {
         curDay = day;
         //System.out.println("day is" + day);
 
+
         Intent intent = getIntent();
         if(intent != null){
             user_info = (HashMap<String,String>) intent.getSerializableExtra("user_info");
@@ -122,7 +124,7 @@ public class DashBoard extends AppCompatActivity {
             for(int i=0;i<emotions.length;i++) emotions[i] = Integer.parseInt(res[i]);
 
             welcomeText = findViewById(R.id.welcome);
-            welcomeText.setText("Hi, "+ user_info.get("fullname")+"!");
+            welcomeText.setText("Hi, "+ user_info.get("fullname")+"!" + " Today is " + calendar.get(Calendar.MONTH) + "/"+ calendar.get(Calendar.DATE));
 
             analysis = user_info.get("analysis").split(",");
 
@@ -272,14 +274,14 @@ public class DashBoard extends AppCompatActivity {
 //                image.setImageBitmap(bmp);
 
                 int id = data.getIntExtra("this emotion", -1);
-                if(id == 1) showEmotion.setBackgroundResource(R.drawable.e1);
-                else if(id == 2) showEmotion.setBackgroundResource(R.drawable.e2);
-                else if(id == 3) showEmotion.setBackgroundResource(R.drawable.e3);
-                else if(id == 4) showEmotion.setBackgroundResource(R.drawable.e4);
-                else if(id == 5) showEmotion.setBackgroundResource(R.drawable.e5);
-                else if(id == 6) showEmotion.setBackgroundResource(R.drawable.e6);
-                else if(id == 7) showEmotion.setBackgroundResource(R.drawable.e7);
-                else if(id == 8) showEmotion.setBackgroundResource(R.drawable.e8);
+                if(id == 1) showEmotion.setImageResource(R.drawable.e1);
+                else if(id == 2) showEmotion.setImageResource(R.drawable.e2);
+                else if(id == 3) showEmotion.setImageResource(R.drawable.e3);
+                else if(id == 5) showEmotion.setImageResource(R.drawable.e5);
+                else if(id == 4) showEmotion.setImageResource(R.drawable.e4);
+                else if(id == 6) showEmotion.setImageResource(R.drawable.e6);
+                else if(id == 7) showEmotion.setImageResource(R.drawable.e7);
+                else if(id == 8) showEmotion.setImageResource(R.drawable.e8);
                 else {}
             }
         }

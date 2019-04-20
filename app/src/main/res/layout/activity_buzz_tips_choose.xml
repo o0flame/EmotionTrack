@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".SelfReflectChoose">
 
+
+
     <!--top bar-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,6 +44,14 @@
         android:layout_gravity="center_horizontal"/>
     <!--top bar end-->
 
+   <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
     <!--Rencent Trend-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -104,7 +114,7 @@
                 android:background="@drawable/university"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
@@ -115,7 +125,7 @@
                 android:id="@+id/checkbox_1"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginLeft="180dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="15dp" />
 
 
@@ -134,7 +144,7 @@
                 android:background="@drawable/two_people"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
@@ -145,7 +155,7 @@
                 android:id="@+id/checkbox_2"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginLeft="212dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="15dp" />
         </LinearLayout>
 
@@ -162,10 +172,10 @@
                 android:background="@drawable/clock"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="10dp"
                 android:text="Time management"
                 android:textSize="16dp" />
 
@@ -173,7 +183,7 @@
                 android:id="@+id/checkbox_3"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginLeft="168dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="15dp" />
         </LinearLayout>
 
@@ -190,7 +200,7 @@
                 android:background="@drawable/dollar_sign"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="18dp"
@@ -201,7 +211,7 @@
                 android:id="@+id/checkbox_4"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:layout_marginLeft="192dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="15dp" />
         </LinearLayout>
 
@@ -217,7 +227,7 @@
                 android:layout_marginLeft="20dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
@@ -228,7 +238,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="261dp"
+                android:layout_marginLeft="115dp"
                 android:background="@drawable/add_icon"/>
         </LinearLayout>
     </LinearLayout>
@@ -240,7 +250,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
         <LinearLayout
-            android:layout_width="310dp"
+            android:layout_width="190dp"
             android:layout_height="match_parent">
         </LinearLayout>
 
@@ -250,6 +260,7 @@
             android:layout_height="30dp"
             android:background="@drawable/next_button_not"/>
     </LinearLayout>
+    </LinearLayout>
     <!--next button end-->
-
+    </ScrollView>
 </LinearLayout>
